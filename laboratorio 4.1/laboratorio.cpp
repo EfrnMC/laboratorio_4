@@ -43,15 +43,3 @@ public:
     }
 };
 
-int main() {
-    Perro miPerro("Rex", 5);
-    miPerro.hacerSonido();
-
-    Automovil miCoche("Toyota", 60);
-    miCoche.acelerar();
-
-    Persona persona1("Carlos", 30);
-    persona1.saludar();
-
-    return 0;
-}
