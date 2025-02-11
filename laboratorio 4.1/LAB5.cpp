@@ -54,7 +54,7 @@ void agregarProducto(vector<Producto>& inventario) {
     cout << "Ingrese el nombre del Producto: ";
     cin.ignore(); // Limpiar buffer
     getline(cin, nombre);
-    cout << "Ingrese el código: ";
+    cout << "Ingrese el cÃ³digo: ";
     cin >> codigo;
     cout << "Ingrese el precio: ";
     cin >> precio;
@@ -112,6 +112,21 @@ void calcularValorTotal(vector<Producto>& inventario) {
         total += producto.obtenerValor();
     }
     cout << "Valor total del inventario: Q" << total << endl;
+}
+
+void eliminarProducto(vector<Producto>& inventario) {
+    int codigo;
+    cout << "Ingrese el codigo del producto a eliminar: ";
+    cin >> codigo;
+
+    for (size_t i = 0; i < inventario.size(); i++) {
+        if (inventario[i].obtenerCodigo() == codigo) {
+            inventario.erase(inventario.begin() + i);
+            cout << "Producto eliminado exitosamente." << endl;
+            return;
+        }
+    }
+    cout << "Producto no encontrado." << endl;
 }
 
 int main() {
